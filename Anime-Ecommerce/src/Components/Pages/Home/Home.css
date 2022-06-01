@@ -1,0 +1,142 @@
+.sliderContainer{
+    height: 100vh;
+    display: flex;
+    position:relative;
+    overflow: hidden;
+}
+#back{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.4;
+}
+#forward{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.4;
+}
+#featured{
+    text-align: center;
+    padding: 30px;
+}
+.slide{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.img{
+    height: 100vh;
+    display: flex;
+}
+.info{
+    flex: 1;
+    margin: 0 50px;
+    padding: 50px;
+}
+#button1{
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px
+}
+#button2{
+    display: none;
+}
+@media only screen and (max-width: 1100px) {
+    .info{
+        display: none;
+    }
+    #back,#forward{
+        width: 25px;
+        height: 25px;
+        transform: translateY(-15vh);
+    }
+    #sliderImg{
+        width: 100%;
+        height: 75vh;
+    }
+    .slide{
+        justify-content: center;
+    }
+    #button2{
+        display: block;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 10px
+    }
+    .hiddenButton{
+        display: flex;
+        justify-content: center;
+    }
+  }
+  #categoryHeader{
+      text-align: center;
+      padding: 50px;
+  }
+ .Sections{
+    display: flex;
+    padding: 20px;
+ }
+ .categoryContainer{
+     flex:1;
+     justify-content: center;
+     position: relative;
+     margin: 15px;
+ }
+ .imageCategory{
+     width: 100%;
+     height: 100vh;
+ }
+ #image{
+     width: 100%;
+     height: 70vh;
+     object-fit: cover;
+     border: 1px solid grey;
+     border-radius: 2px;
+ }
+ .titleCateogry{
+     position: absolute;
+     width:100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     color: white;
+     font-weight: 600;
+ }
+#categoryButton{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#categoryTitle{
+   font-size: 2.75rem;
+   opacity: 2;
+   mix-blend-mode: difference;
+   text-align: center;
+   padding: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    .Sections{
+        flex-direction: column;
+    }
+}

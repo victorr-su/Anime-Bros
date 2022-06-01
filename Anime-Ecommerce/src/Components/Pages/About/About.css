@@ -1,0 +1,36 @@
+#aboutHeading{
+    text-align: center;
+    padding: 30px;
+}
+.aboutContent{
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+#aboutPicture{
+   margin-right: 150px;
+}
+.aboutTextBox{
+    width: 500px;
+}
+@media only screen and (max-width:1050px) {
+    .aboutTextBox{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 850px) {
+    .aboutContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #aboutPicture{
+        margin: 0;
+    }
+    .aboutTextBox{
+        margin-top: 50px;
+    }
+}

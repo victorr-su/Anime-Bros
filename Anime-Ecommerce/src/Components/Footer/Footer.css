@@ -1,0 +1,155 @@
+h3,h5,h1{
+    margin:0;
+}
+.footer{
+    height: 280px;
+    display: flex;
+    position: relative;
+    align-items: flex-start
+}
+.leftSide{
+    padding: 20px;
+    width:33.3%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+#desc{
+    text-align: center;
+    width: 300px
+}
+#insta,#facebook,#tiktok{
+    margin: 8px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.center{
+    width:33.3%;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.list{
+    list-style: none;
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+li{
+    width: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+#links{
+    text-align: center;
+}
+li:hover{
+    text-decoration: underline;
+}
+.rightSide{
+    width:33.3%;
+    flex: 1;
+    padding: 20px;
+}
+#footerText{
+    text-align: center;
+}
+#footerTitle{
+    white-space: nowrap;
+    text-align: center;
+}
+.bottom{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+    padding: 10px;
+}
+#line{
+    margin: 20px;
+    border: 1px solid #dddddd;
+}
+#addressFooter,#emailFooter,#phoneFooter{
+    margin-bottom: 15px;
+    display:flex;
+    align-items: center;
+}
+#payments{
+    margin-top: 20px;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 950px) {
+    #payments{
+        display: none;
+    }
+    #desc{
+        width: 200px;
+        font-size: 12px;
+    }
+    #addressFooter,#emailFooter,#phoneFooter,li{
+        font-size: 12px;
+    }
+    #insta,#facebook,#tiktok{
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+}
+@media only screen and (max-width:600px) {
+    #addressFooter,#emailFooter,#phoneFooter,li{
+        font-size: 10px;
+    }
+    #desc{
+        display:none;
+    }
+}
+@media only screen and (max-width:450px) {
+    #addressFooter,#emailFooter,#phoneFooter,li{
+        font-size: 10px;
+    }
+    #desc{
+        display:none;
+    }
+    #insta,#facebook,#tiktok{
+        font-size: 13px;
+        margin-top: 20px;
+    }
+    #links, #footerTitle{
+        font-size: 12px;
+    }
+    #Phone,#Mail,#Room{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:380px) {
+    li{
+        display:none;
+    }
+    #insta,#facebook,#tiktok{
+        display:none;
+    }
+    #addressFooter,#emailFooter,#phoneFooter{
+        display:none;
+    }
+    #Phone,#Mail,#Room{
+        display:none;
+    }
+    .footer{
+        height: 300px;
+    }
+    #links, #footerTitle{
+        display:none;
+    }
+    .footer{
+        height: 100px;
+    }
+}

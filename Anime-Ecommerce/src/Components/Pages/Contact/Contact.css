@@ -1,0 +1,36 @@
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+}
+#contactHeading,#contactDescription{
+    text-align: center;
+}
+#contactHeading{
+    padding-top: 30px;
+}
+.contactForms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin : 0 auto;
+}
+#nameContact,#textContact,#emailContact{
+    width: 600px;
+    height: 30px;
+    display:flex;
+    padding-left: 10px;
+}
+#textContact{
+    padding-top: 5px;
+}
+#textContact{
+    height: 100px;
+    display: flex;
+    resize: none;
+}
+@media only screen and (max-width: 600px) {
+    #nameContact,#textContact,#emailContact{
+        width: 300px;
+    }
+
+}
