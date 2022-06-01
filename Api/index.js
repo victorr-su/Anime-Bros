@@ -11,6 +11,6 @@ mongoose.connect(
     .then(()=>console.log("db connection successful"))
     .catch((err)=>{console.log(err)})
 
-app.listen(4000, () =>{
-    console.log("hi");
+app.listen(process.env.PORT || 4000, () =>{
+    console.log("server is running");
 });
