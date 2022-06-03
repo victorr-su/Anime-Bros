@@ -1,5 +1,7 @@
-const router = require("express").router()
+const router = require("express").Router()
 
 router.get("/usertest", (req, res) =>{
-    res.send
+    res.send("this route is working")
 })
+
+module.exports = router
