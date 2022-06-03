@@ -27,7 +27,7 @@ const NavBar = () => {
 
         <div className = "headers">
 
-          <div className = "hamburger" onClick = {()=> handleClick()}>
+          <div className = "hamburger" onClick = {handleClick}>
             <i class= {state === true? "fas fa-times" : "fas fa-bars" } id = "bars"></i>
           </div>
           
