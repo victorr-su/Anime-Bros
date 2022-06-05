@@ -17,6 +17,8 @@ import Hat from './Components/Pages/ProductItems/Hat';
 import Coat from './Components/Pages/ProductItems/Coat';
 import ScrollToTop from './Components/ScrollToTop';
 import Cart from './Components/Cart/Cart';
+import Register from './Components/Pages/Register/Register';
+import Login from './Components/Pages/Login/Login';
 
 const App = () => {
   return (
@@ -33,6 +35,8 @@ const App = () => {
             <Route path = "/about" element = {<About/>}/>
             <Route path = "/contact" element = {<Contact/>}/>
             <Route path = "/cart" element = {<Cart/>}/>
+            <Route path = "/register" element = {<Register/>}/>
+            <Route path = "/login" element = {<Login/>}/>
           </Routes>
 
           <Routes>

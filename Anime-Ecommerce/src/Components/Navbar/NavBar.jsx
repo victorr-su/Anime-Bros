@@ -12,6 +12,7 @@ const NavBar = () => {
 
   const handleClick = () =>{
     setState(!state);
+    
   }
 
   const handleLink = () =>{
@@ -35,6 +36,10 @@ const NavBar = () => {
             <Link to = "/products" style={{ textDecoration: 'none', color: 'black' }} onClick = {()=> handleLink()}><h3 id = "Products">Products</h3></Link>
             <Link to = "/about"  style={{ textDecoration: 'none', color: 'black' }} onClick = {()=> handleLink()}><h3 id = "About">About</h3></Link>
             <Link to = "/contact"  style={{ textDecoration: 'none', color: 'black' }} onClick = {()=> handleLink()}><h3 id = "Contact">Contact</h3></Link>
+            <div className = "nonactive-login">
+              <Link to = "/register" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "register"> Register</h3></Link>
+              <Link to = "/login" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "login"> Login</h3></Link>
+            </div>
           </div>
         </div>
 
@@ -48,6 +53,10 @@ const NavBar = () => {
         </div>
 
         <div className = "cart">
+          <div className = "active-login">
+              <Link to = "/register" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "register"> Register</h3></Link>
+              <Link to = "/login" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "login"> Login</h3></Link>
+          </div>
           <Search id = "search"/>
           <input id = "input" size = "25" placeholder = "Search"/>
           <Link to = "/cart">

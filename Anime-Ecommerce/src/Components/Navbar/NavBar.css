@@ -42,7 +42,7 @@
     padding: 40px;
     justify-content: end;
   }
-  #Products, #About, #Contact{
+  #Products, #About, #Contact, #register, #login{
     padding: 30px;
     cursor: pointer;
   }
@@ -67,7 +67,13 @@
     height: 50px;
     width: 50px;
   }
-  @media only screen and (max-width: 1000px) {
+  .nonactive-login{
+    display: none;
+  }
+  .active-login{
+    display:flex;
+  }
+  @media only screen and (max-width: 1300px) {
     #title{
       font-size: 15px;
     }
@@ -95,8 +101,15 @@
       width: 100%;
       border-bottom: 1px solid #e9ecef;
     }
-    #Products,#About,#Contact{
+    #Products,#About,#Contact, #register, #login{
       text-align: center;
+    }
+    .nonactive-login{
+      display: block;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .active-login{
+      display:none;
     }
   }
   @media only screen and (max-width: 700px) {
@@ -107,7 +120,7 @@
       justify-content: flex-end;
     }
   }
-  #Products:hover, #About:hover, #Contact:hover {
+  #Products:hover, #About:hover, #Contact:hover, #register:hover , #login:hover {
     text-decoration: underline;
     font-weight: 100;
 }
