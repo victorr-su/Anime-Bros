@@ -13,7 +13,8 @@ mongoose.connect(process.env.MONGO_URL)
         console.log("test is successful")
     })
 
-app.use("/api/user", userRouter);
+app.use(express.json())
+app.use("/api/users", userRouter);
 
 app.listen(process.env.PORT || 4000, (req,res) =>{
     console.log("server is running");

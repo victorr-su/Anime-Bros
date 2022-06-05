@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { Add, Remove } from '@material-ui/icons';
+import { useState } from "react";
 
 const FilterColor = styled.div`
   display:flex;
@@ -13,6 +14,13 @@ const FilterColor = styled.div`
 `
 
 const ColoredShirt = () => {
+    const [value, setValue] = useState(1);
+
+    const decreaseValue = ()=>{
+        if(value > 1){
+            setValue(value - 1)
+        }
+    }
   return (
     <div className = "productItemContainer">
         <div className = "productImageContainer">
@@ -49,9 +57,9 @@ const ColoredShirt = () => {
 
             <div className = "addContainer">
                 <span id = "Amount">
-                <Remove id = "remove"/>
-                1
-                <Add id = "add"/>
+                <Remove id = "remove" onClick = {decreaseValue}/>
+                {value}
+                <Add id = "add" onClick= {()=>setValue(value+1)}/>
                 </span>
                 <button id = "cartAdd">
                 Add to Cart
