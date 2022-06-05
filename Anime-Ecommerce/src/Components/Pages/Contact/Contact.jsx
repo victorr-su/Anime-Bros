@@ -13,6 +13,7 @@ const Contact = () => {
         <input placeholder = "Email" id = "emailContact"/>
         <h4 id = "contactName">Message</h4>
         <textarea placeholder = "Type your concerns here" id = "textContact"/>
+        <button id = "contact-button"> Submit</button>
       </div>
     </div>
   )

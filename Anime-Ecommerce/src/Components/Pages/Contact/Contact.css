@@ -28,6 +28,12 @@
     display: flex;
     resize: none;
 }
+#contact-button{
+    padding: 10px;
+    width: 100px;
+    margin-top: 30px;
+    border: none;
+}
 @media only screen and (max-width: 600px) {
     #nameContact,#textContact,#emailContact{
         width: 300px;
