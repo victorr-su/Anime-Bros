@@ -21,40 +21,40 @@ import Register from './Components/Pages/Register/Register';
 import Login from './Components/Pages/Login/Login';
 
 const App = () => {
-  return (
-    <Router>
-      <div className = "app">
-        <ScrollToTop/>
-        <Anouncement/>
-        <Navbar/>
-        <div className = "pages">
 
-          <Routes>
-            <Route path = "/" element = {<Home/>}/>
-            <Route path = "/products" element = {<Products/>}/>
-            <Route path = "/about" element = {<About/>}/>
-            <Route path = "/contact" element = {<Contact/>}/>
-            <Route path = "/cart" element = {<Cart/>}/>
-            <Route path = "/register" element = {<Register/>}/>
-            <Route path = "/login" element = {<Login/>}/>
-          </Routes>
+    return (
+        <Router>
+          <div className = "app">
+            <ScrollToTop/>
+            <Anouncement/>
+            <Navbar/>
+            <div className = "pages">
+    
+              <Routes>
+                <Route path = "/" element = {<Home/>}/>
+                <Route path = "/products" element = {<Products/>}/>
+                <Route path = "/about" element = {<About/>}/>
+                <Route path = "/contact" element = {<Contact/>}/>
+                <Route path = "/cart" element = {<Cart/>}/>
+                <Route path = "/register" element = {<Register/>}/>
+                <Route path = "/login" element = {<Login/>}/>
+              </Routes>
 
-          <Routes>
-            <Route path = "/products/GuitarShirt" element = {<GuitarShirt/>}/>
-            <Route path = "/products/ColoredShirt" element = {<ColoredShirt/>}/>
-            <Route path = "/products/Dress" element = {<Dress/>}/>
-            <Route path = "/products/Bag" element = {<Bag/>}/>
-            <Route path = "/products/Hat" element = {<Hat/>}/>
-            <Route path = "/products/Coat" element = {<Coat/>}/>
-          </Routes>
-
-        </div>
-        <Newsletter/>
-        <Footer/>
-      </div>
-    </Router>
-
-  );
+              <Routes>
+                <Route path = "/products/GuitarShirt" element = {<GuitarShirt/>}/>
+                <Route path = "/products/ColoredShirt" element = {<ColoredShirt/>}/>
+                <Route path = "/products/Dress" element = {<Dress/>}/>
+                <Route path = "/products/Bag" element = {<Bag/>}/>
+                <Route path = "/products/Hat" element = {<Hat/>}/>
+                <Route path = "/products/Coat" element = {<Coat/>}/>
+              </Routes>
+    
+            </div>
+            <Newsletter/>
+            <Footer/>
+          </div>
+        </Router>
+    );
 }
 
 export default App;

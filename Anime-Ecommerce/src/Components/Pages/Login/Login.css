@@ -1,0 +1,32 @@
+#login-header{
+    text-align: center;
+    padding: 40px;
+}
+.login-forms{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ }
+#login-username, #login-password{
+    min-width: 40%;
+    padding: 10px;
+    flex:1;
+    margin: 20px 10px 0px 0px;
+}
+#login-button{
+    padding: 15px 10px;
+    width: 100px;
+    margin-top: 30px;
+    border: none;
+    cursor:pointer;
+}
+#forget{
+    padding: 50px;
+}
+@media only screen and (max-width: 600px) {
+    #login-username, #login-password{
+        width: 300px;
+    }
+
+}

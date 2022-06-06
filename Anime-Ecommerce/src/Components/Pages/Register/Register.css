@@ -1,3 +1,33 @@
-.register-container{
-   
+.contact-wrapper{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+#first-name,#last-name,#email,#phone-number,#password, #confirm-password{
+    min-width: 40%;
+    padding: 10px;
+    flex:1;
+    margin: 20px 10px 0px 0px;
+}
+#register-button{
+    padding: 15px 10px;
+    width: 100px;
+    margin-top: 30px;
+    border: none;
+    cursor:pointer;
+}
+#register-heading{
+    text-align: center;
+    padding: 40px;
+}
+#agreement{
+    padding: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    #first-name,#last-name,#email,#phone-number,#password, #confirm-password{
+        width: 300px;
+    }
+
 }
