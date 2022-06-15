@@ -16,7 +16,7 @@ router.post("/", verifyTokenAndAdmin, async (req,res)=>{
 //UPDATE
 router.put("/:id", verifyTokenAndAuth, async (req,res) =>{
     try{
-        const updatedProduct = await User.findByIdAndUpdate(req.params.id, {
+        const updatedProduct = await Product.findByIdAndUpdate(req.params.id, {
             $set: req.body
         }, {new:true})
         res.status(200).json(updatedProduct);
@@ -38,7 +38,7 @@ router.delete("/:id", verifyTokenAndAuth, async (req,res)=>{
 //GET PRODUCTS
 router.get("/find/:id", async (req,res)=>{
     try{
-        const products = await User.findById(req.params.id)
+        const products = await Product.findById(req.params.id)
         res.status(200).json(products);
     }catch(err){
         res.status(500).json(err)
@@ -54,11 +54,7 @@ router.get("/", async (req,res)=>{
         if(queryNew){
             products = await Product.find().sort({createdAt: -1}).limit(5);
         }else if (queryCategory){
-            products = await Product.find().sort({categories:
-                {
-                    $in: [queryCategory]
-                }
-            })
+            products = await Product.find().sort({categories:{$in: [queryCategory]}}, {createdAt: -1})
         }else{
             products = await Product.find();
         }
