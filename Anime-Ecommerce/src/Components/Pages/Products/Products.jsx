@@ -2,11 +2,19 @@ import React from 'react'
 import { products } from '../../../data'
 import "./Products.css"
 import { Link } from 'react-router-dom';
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
 
 
 const Products = () => {
   return (
     <div className = "container">
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
       <h1 id = "productHeading">Products</h1>
       <div className = "filterSection">
 
@@ -49,6 +57,8 @@ const Products = () => {
           </Link>
         ))}
       </div>
+      <Newsletter/>
+      <Footer/>
     </div>
 
   )

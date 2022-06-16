@@ -1,0 +1,15 @@
+.pay-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#pay-button{
+    padding: 20px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 20px;
+}

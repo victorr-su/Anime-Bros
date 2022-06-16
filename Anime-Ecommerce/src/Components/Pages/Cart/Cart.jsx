@@ -2,6 +2,11 @@ import { Add, Remove } from '@material-ui/icons';
 import React from 'react'
 import styled from "styled-components";
 import "./Cart.css"
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
 
 const TopButton = styled.button`
     padding: 10px;
@@ -19,6 +24,10 @@ const ProductColor = styled.div`
 `
 const Cart = () => {
   return (
+    <>
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
     <div className = "cartWrapper">
         <h1 id = "cartTitle"> Your Bag</h1>
 
@@ -111,6 +120,9 @@ const Cart = () => {
 
         </div>
     </div>
+    <Newsletter/>
+    <Footer/>
+    </>
   )
 }
 

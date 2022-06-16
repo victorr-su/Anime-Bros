@@ -5,6 +5,11 @@ import { ArrowForward } from '@material-ui/icons'
 import { useState } from "react";
 import { categories, sliderItems } from '../../../data';
 import styled from "styled-components";
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
 
 
 const Wrapper = styled.div`
@@ -27,6 +32,9 @@ const Home = () => {
   }
   return (
     <div className = "homePage">
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
       <h1 id = "featured">Featured Items</h1>
       <div className = "sliderContainer">
         <ArrowBack id = "back" onClick = {()=> prevSlide()}/>
@@ -65,6 +73,8 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <Newsletter/>
+      <Footer/>
     </div>
   )
 }

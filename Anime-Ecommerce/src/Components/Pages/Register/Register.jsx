@@ -1,9 +1,17 @@
 import React from 'react'
 import "./Register.css"
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
 
 const Register = () => {
   return (
     <div className = "register-container">
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
         <h1 id = "register-heading">Create An Account</h1>
           <div className = "contact-wrapper">
             <input placeholder = "First Name" id = "first-name"></input>
@@ -17,6 +25,8 @@ const Register = () => {
             specimen book.</h5>
             <button id = "register-button">Create</button>
         </div>
+      <Newsletter/>
+      <Footer/>
     </div>
   )
 }

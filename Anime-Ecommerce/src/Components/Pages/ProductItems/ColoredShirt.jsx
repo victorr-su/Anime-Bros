@@ -2,6 +2,11 @@ import React from 'react'
 import styled from "styled-components";
 import { Add, Remove } from '@material-ui/icons';
 import { useState } from "react";
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
 
 const FilterColor = styled.div`
   display:flex;
@@ -22,6 +27,10 @@ const ColoredShirt = () => {
         }
     }
   return (
+    <>
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
     <div className = "productItemContainer">
         <div className = "productImageContainer">
             <img src = "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F79%2Fd9%2F79d94b8660a5ae7c57525f68855d482baa34158f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_jeans_loose%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]" alt = "jeans" id = "productItemImage"/>
@@ -68,6 +77,9 @@ const ColoredShirt = () => {
 
         </div>
     </div>
+    <Newsletter/>
+    <Footer/>
+    </>
   )
 }
 

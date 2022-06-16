@@ -1,8 +1,17 @@
 import React from 'react'
 import "./About.css";
+import NavBar from '../../Navbar/NavBar';
+import ScrollToTop from '../../ScrollToTop';
+import Anouncement from '../../Navbar/Anouncement';
+import Newsletter from '../../Newsletter/Newsletter';
+import Footer from '../../Footer/Footer';
+
 const About = () => {
   return (
     <div className = "aboutContainer">
+      <ScrollToTop/>
+      <Anouncement/>
+      <NavBar/>
       <h1 id = "aboutHeading">Who are we?</h1>
       <div className = "aboutContent">
         <img src = "https://cdn.staticneo.com/w/naruto/Nprofile2.jpg" alt = "naruto" id = "aboutPicture"/>
@@ -19,6 +28,8 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Newsletter/>
+      <Footer/>
     </div>
   )
 }
