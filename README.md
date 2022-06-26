@@ -1,4 +1,4 @@
-# Anime-Ecommerce-Store
+# Anime-Bros
 Your search for high-quality and inexpensive anime merchandise ends here :)
 
 # DISCLAIMER
