@@ -52,7 +52,7 @@ const BottomDisclaimer = () => {
         </div>
 
         <div className = "bottom">
-            <hr ID = "line"></hr>
+            <hr id = "line"></hr>
             <h5 id = "footerText">V & J Anime store | Designed by Victor Su</h5>
         </div>
 

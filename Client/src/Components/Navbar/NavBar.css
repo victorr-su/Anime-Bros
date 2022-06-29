@@ -97,7 +97,7 @@
       flex-direction: column;
       background-color: white;
       align-items: center;
-      z-index: 2;
+      z-index: 3;
       width: 100%;
       border-bottom: 1px solid #e9ecef;
     }

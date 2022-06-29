@@ -40,28 +40,10 @@
     align-items: center;
     margin: 10px;
 }
-.icon1:hover,.icon2:hover,.icon3:hover{
-    background-color: #e9f5f5;
-    transform: scale(1.1);
+.imageContainer img:hover{
+    transform: scale(1.01);
     cursor: pointer;
     transition: all 0.4s;
-}
-.icons{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    background-color: rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.icons:hover{
-    opacity: 1;
-    transition: 0.4s ease;
 }
 .filterSection{
     display: flex;

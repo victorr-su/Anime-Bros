@@ -84,6 +84,7 @@
         justify-content: center;
     }
   }
+  
   #categoryHeader{
       text-align: center;
       padding: 50px;
@@ -135,16 +136,35 @@
    padding: 5px;
 }
 
+@media only screen and (max-width: 1300px){
+    #sliderImg{
+        width: 100%;
+        height: 80vh;
+    }
+  }
 @media only screen and (max-width: 800px) {
     .Sections{
         flex-direction: column;
     }
 }
 
+@media only screen and (max-width: 650px) {
+    #sliderImg{
+        width: 100%;
+        height: 70vh;
+    }
+}
+
 @media only screen and (max-width: 500px){
     #sliderImg{
         width: 100%;
-        height: 60vh;
+        height: 55vh;
+    }
+    #newsHeading{
+        font-size: 50px;
+    }
+    #newsCaption{
+        font-size: 18px;
     }
 
 }

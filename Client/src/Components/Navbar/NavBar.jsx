@@ -1,11 +1,14 @@
 import React from 'react'
 import './NavBar.css'
-import {Search} from "@material-ui/icons"
-import {ShoppingCart} from '@material-ui/icons';
+import {ShoppingCartOutlined} from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
+import { Badge } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
+
+  const quantity = useSelector(state=>state.cart.quantity);
 
   const [state, setState] = useState(false);
   const [linkClick, setLinkClick] = useState(false);
@@ -29,7 +32,7 @@ const NavBar = () => {
         <div className = "headers">
 
           <div className = "hamburger" onClick = {handleClick}>
-            <i class= {state === true? "fas fa-times" : "fas fa-bars" } id = "bars"></i>
+            <i className = {state === true? "fas fa-times" : "fas fa-bars" } id = "bars"></i>
           </div>
           
           <div className = {state === true? "active-nav" : "nonactive-nav"}>
@@ -57,10 +60,10 @@ const NavBar = () => {
               <Link to = "/register" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "register"> Register</h3></Link>
               <Link to = "/login" style={{ textDecoration: 'none', color: 'black'}} onClick = {()=> handleLink()}><h3 id = "login"> Login</h3></Link>
           </div>
-          <Search id = "search"/>
-          <input id = "input" size = "25" placeholder = "Search"/>
           <Link to = "/cart">
-          <ShoppingCart id = "carticon" style = {{textDecoration: 'none', color: 'black'}}/>
+            <Badge badgeContent={quantity} color="primary">
+              <ShoppingCartOutlined id = "carticon" style = {{textDecoration: 'none', color: 'black'}}/>
+            </Badge>
           </Link>
         </div>
         

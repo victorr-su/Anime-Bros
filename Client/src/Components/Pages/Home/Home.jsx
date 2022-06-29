@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./Home.css"
 import { ArrowBack } from '@material-ui/icons'
 import { ArrowForward } from '@material-ui/icons'
@@ -39,7 +40,7 @@ const Home = () => {
       <div className = "sliderContainer">
         <ArrowBack id = "back" onClick = {()=> prevSlide()}/>
         {sliderItems.map((item,index) =>(
-          <Wrapper slideIndex = {slideIndex}>
+          <Wrapper slideIndex = {slideIndex} key = {index}>
                 <div className = "slide">
                     <div className = "img">
                       <img src = {item.img} alt = "error" key = {item.id} id = "sliderImg"/>
@@ -47,7 +48,9 @@ const Home = () => {
                     <div className = "info">
                       <h1 id = "title1"> {item.title}</h1>
                       <p id = "text1"> {item.text}</p>
-                      <button id = "button1">Shop Now</button>
+                      <Link to = {"/products"}>
+                        <button id = "button1">Shop Now</button>
+                      </Link>
                     </div>
                 </div>
           </Wrapper>
@@ -60,17 +63,20 @@ const Home = () => {
       </div>
       
       <h2 id = "categoryHeader">Most Popular</h2>
+
       <div className = "Sections">
         {categories.map(item =>(
-          <div className = "categoryContainer">
-            <div className = "imageCateogry">
-              <img src = {item.img} alt = "error" id = "image"/>
+            <div className = "categoryContainer" key = {item.id}>
+              <div className = "imageCateogry">
+                <img src = {item.img} alt = "error" id = "image"/>
+              </div>
+              <div className = "titleCateogry">
+              <h1 id = "categoryTitle">{item.title}</h1>
+                <Link to = {"/products" + item.cat}>
+                <button id = "categoryButton">Shop now</button>
+                </Link>
+              </div>
             </div>
-            <div className = "titleCateogry">
-             <h1 id = "categoryTitle">{item.title}</h1>
-             <button id = "categoryButton">Shop now</button>
-            </div>
-          </div>
         ))}
       </div>
       <Newsletter/>

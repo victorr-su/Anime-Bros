@@ -27,17 +27,20 @@ export const categories = [
     {
         id: 1,
         img: "https://cdn.vox-cdn.com/thumbor/Jb2X5lJUrIJtKw9eI3hbSYurZyU=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22449912/DS_Still_21.jpg",
-        title: "DEMON SLAYER"
+        title: "DEMON SLAYER",
+        cat: "men"
     },
     {
         id: 2,
         img: "https://collection.cdn-pictorem.com/collection/900_Coolbits-Art_cunin3.jpg",
-        title: "NARUTO"
+        title: "NARUTO",
+        cat: "women"
     },
     {
         id: 3,
         img: "https://imgix.ranker.com/user_node_img/50062/1001223374/original/a-brutal-imagining-of-erin_s-transformation-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375",
-        title: "AOT"
+        title: "AOT",
+        cat: ""
     },
 ]
 
