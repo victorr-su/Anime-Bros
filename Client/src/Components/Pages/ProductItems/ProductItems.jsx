@@ -22,7 +22,6 @@ const FilterColor = styled.div`
   background-color: ${(props)=> props.color};
   margin: 0 5px;
   cursor: pointer;
-  border: 1px solid black;
 `
 
 const Bag = () => {
@@ -34,7 +33,8 @@ const Bag = () => {
     const id = location.pathname.split("/")[2];
     const [product, setProduct] = useState({});
     const [color, setColor] = useState("");
-    const [size, setSize] = useState("");
+    const [size, setSize] = useState("Size");
+    const [pickColor, setPickColor] = useState(false);
 
     useEffect(()=>{
         const getProducts = async () =>{
@@ -54,8 +54,26 @@ const Bag = () => {
         }
     }
 
+    const displayColor = () =>{
+        setColor(color);
+    }
+
+    const colorBorder = () =>{
+        setPickColor(!pickColor);
+    }
+
     const handleClick = () =>{
-       dispatch(addProduct({product, quantity}));
+       dispatch(addProduct({...product, quantity, color, size }));
+    }
+
+    const handleError = () =>{
+        if(!pickColor && size === "Size"){
+            alert("Please fill out all fields");
+        }else if (size === "Size"){
+            alert("Please select a size");
+        }else if (!pickColor){
+            alert("Please select a color");
+        }
     }
   return (
     <>
@@ -80,13 +98,14 @@ const Bag = () => {
                 <div className = "colorFilter">
                     <h4 id = "productItemColor">Color</h4>
                     {product.color?.map((color)=>(
-                        <FilterColor color = {color} key = {color} onClick = {()=> setColor(color)}/>
+                        <FilterColor color = {color} key = {color} onClick = {()=> {displayColor();colorBorder();}} style = {{border: pickColor ? "1px solid black" : "none"}} />
                     ))}
                 </div>
     
                 <div className = "sizeFilter"> 
                     <h4 id = "productItemSize">Size</h4>
                     <select className = "sizeSelector" onChange = {(e)=> setSize(e.target.value)}>
+                        <option>Size</option>
                         {product.size?.map((size)=>(
                             <option key = {size}>{size}</option>
                         ))}
@@ -100,7 +119,7 @@ const Bag = () => {
                     {quantity}
                     <Add id = "add" onClick= {()=>setQuantity(quantity+1)}/>
                     </span>
-                    <button id = "cartAdd" onClick = {handleClick}>
+                    <button id = "cartAdd" onClick = { (pickColor && size!== "Size")? handleClick : handleError}>
                     Add to Cart
                     </button>
                 </div>

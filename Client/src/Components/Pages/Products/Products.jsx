@@ -92,10 +92,10 @@ const Products = () => {
             </select>
             <select id = "sizeSelect" name = "size" onChange = {handleFilter}>
               <option disabled style = {{display: "none"}}>Size</option>
-              <option>s</option>
-              <option>m</option>
-              <option>l</option>
-              <option>one-size</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>One-size</option>
             </select>
           </div>
 

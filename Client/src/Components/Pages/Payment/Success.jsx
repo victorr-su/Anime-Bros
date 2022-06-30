@@ -1,7 +1,11 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import "./Success.css"
 
 const Success = () => {
+  const location = useLocation();
+
+  console.log(location);
   return (
     <div className = "success-wrapper">
         <button id = "success-button">Success !</button>

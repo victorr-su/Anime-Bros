@@ -51,7 +51,7 @@ const NavBar = () => {
           <img src = "https://cdn3.iconfinder.com/data/icons/brands-applications/512/naruto-512.png" id = "naruto" alt = "error"/>
           </Link>
           <Link to = "/" style={{ textDecoration: 'none', color: 'black' }}>
-            <h2 id = "title">V & J Anime Store</h2>
+            <h2 id = "title">AnimeBros</h2>
           </Link>
         </div>
 

@@ -14,7 +14,7 @@ const BottomDisclaimer = () => {
     <div className = "footer">
 
         <div className = "leftSide">
-          <h3 id = "footerTitle">V & J Anime store</h3>
+          <h3 id = "footerTitle">AnimeBros</h3>
             <div className = "social">
               <p id = "desc">
               There are many variations of passages of Lorem Ipsum available, but
@@ -53,7 +53,7 @@ const BottomDisclaimer = () => {
 
         <div className = "bottom">
             <hr id = "line"></hr>
-            <h5 id = "footerText">V & J Anime store | Designed by Victor Su</h5>
+            <h5 id = "footerText">AnimeBros | Designed by Victor Su</h5>
         </div>
 
     </div>
