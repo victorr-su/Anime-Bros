@@ -12,5 +12,7 @@ This full stack ecommerce application has 15 pages built from React Router, and 
 
 # Technology
 Client: React, CSS, React Router, Styled Components, Redux (State management)
+
 Api: Node.js, Express, MongoDB, Mongoose
+
 Other: Stripe (integrated to handle payments)
