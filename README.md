@@ -5,8 +5,8 @@ Your search for high-quality and inexpensive anime merchandise ends here :)
 Please note, all the product images on the website are NOT for sale and are random pictures used for placeholders. Please do not get confused when you see a lack of anime products.
 
 # Features
-
-
+Check out the demo below
+https://youtu.be/9XKHOeK6khU
 
 This full stack ecommerce application has 15 pages built from React Router, and includes many custom components like a carousel slider, navbar, and footer. Redux was used for state management, specifcally for login and cart features, ex. saving items to cart updates the cart object in the store. The app offers CRUD operations and is responsive for mobile on a variety of screen sizes. The Client folder contains all the components for the front end and all the Redux files. The Api folder contains the schema's for different objects and routes for specfic types of requests to be handled.
 
