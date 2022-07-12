@@ -5,6 +5,8 @@ Your search for high-quality and inexpensive anime merchandise ends here :)
 Please note, all the product images on the website are NOT for sale and are random pictures used for placeholders. Please do not get confused when you see a lack of anime products.
 
 # Features
+<img width="1173" alt="image" src="https://user-images.githubusercontent.com/70664921/178595640-30ec8951-78b3-407d-83fb-a3fd921dd7a9.png">
+
 Check out the demo:
 https://youtu.be/9XKHOeK6khU
 
