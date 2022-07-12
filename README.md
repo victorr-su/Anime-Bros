@@ -6,14 +6,6 @@ Please note, all the product images on the website are NOT for sale and are rand
 
 # Features
 
-![image](https://user-images.githubusercontent.com/70664921/177393979-5cfb7457-21ad-4470-9978-f677f90c48cc.png)
-Home page
-![image](https://user-images.githubusercontent.com/70664921/177395903-fe7252a4-8ad0-48fa-b5e8-0616d2783ee5.png)
-Product page
-![image](https://user-images.githubusercontent.com/70664921/177395934-9dbe2259-e823-45be-bbdb-cf1715b0fc10.png)
-Product Item page
-![image](https://user-images.githubusercontent.com/70664921/177395957-3dca03a3-b5a9-4c66-ba8e-14ff6f5af975.png)
-Footer
 
 
 This full stack ecommerce application has 15 pages built from React Router, and includes many custom components like a carousel slider, navbar, and footer. Redux was used for state management, specifcally for login and cart features, ex. saving items to cart updates the cart object in the store. The app offers CRUD operations and is responsive for mobile on a variety of screen sizes. The Client folder contains all the components for the front end and all the Redux files. The Api folder contains the schema's for different objects and routes for specfic types of requests to be handled.
