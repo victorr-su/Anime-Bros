@@ -7,12 +7,14 @@ import ScrollToTop from '../../ScrollToTop';
 import Anouncement from '../../Navbar/Anouncement';
 import Newsletter from '../../Newsletter/Newsletter';
 import Footer from '../../Footer/Footer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import StripeCheckout from "react-stripe-checkout";
 import { useState} from "react";
 import { useEffect } from 'react';
 import { userRequest } from '../../../requestMethods';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { deleteProduct } from '../../../Redux/cartRedux';
+import {Delete} from '@material-ui/icons';
 
 
 const KEY = "pk_test_51LBJutJ4YPDEljAM5mXTpMJZHtrBCxAl9v8xE8Kaqq0wOwM1tVxwU67pBqEohpG2vPYMpH4RFtOczCqCHfRcuD0j00qeXAj0eY"
@@ -36,6 +38,7 @@ const Cart = () => {
   const cart = useSelector(state=> state.cart);
 
   const [stripeToken, setStripeToken] = useState(null);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onToken = (token) =>{
@@ -46,16 +49,27 @@ const Cart = () => {
     const makeRequest =  async () =>{
       try{
         const res = await userRequest.post("/checkout/payment", {
-          tokenId: stripeToken,
-          amount: cart.total * 100,
+          tokenId: stripeToken.id,
+          amount:  cart.total * 100,
         })
-        navigate('/success',{data: res.data})
+        navigate('/success', {data: res.data})
       }catch(err){
         console.log(err)
       }
     }
     stripeToken && makeRequest();
   },[stripeToken, cart.total, navigate])
+
+  const handleError = () =>{
+    if(cart.total === 0){
+      alert("You cannot checkout with an empty cart");
+    }
+  }
+
+  const handleDelete = () =>{
+    dispatch(deleteProduct({...cart}));
+  }
+
   return (
     <>
       <ScrollToTop/>
@@ -65,10 +79,28 @@ const Cart = () => {
         <h1 id = "cartTitle"> Your Bag</h1>
 
         <div className = "cartTop">
-            <TopButton style = {{border: "none"}}>Continue Shopping</TopButton>
-            <h4 id = "topText"> Shopping Bag (2) </h4>
+            <Link to = "/products">
+              <TopButton style = {{border: "none"}}>Continue Shopping</TopButton>
+            </Link>
+            <h4 id = "topText">Shopping Bag ({cart.quantity})</h4>
             <h4 id = "topText">Your Wishlist (0)</h4>
-            <TopButton type = "filled">Check Out Now</TopButton>
+
+            {cart.total !== 0? 
+              <StripeCheckout
+              name="AnimeBros"
+              image="https://cdn3.iconfinder.com/data/icons/brands-applications/512/naruto-512.png"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+              >
+                <TopButton type = "filled" onClick = {handleError}>Check Out Now</TopButton>
+            </StripeCheckout>
+            :
+            <TopButton type = "filled" onClick = {handleError}>Check Out Now</TopButton>
+          }
         </div>
 
         <div className = "cartBottom">
@@ -76,7 +108,7 @@ const Cart = () => {
             <div className = "productCart">
               <h3 style = {{ padding: "20px 0px",textAlign: "center",display: cart.products.length === 0 ? "block" : "none"}}>Your cart is empty</h3>
             {cart.products.map((product)=>(
-              <div className = "cartInfo">
+              <div className = "cartInfo" key = {product._id}>
                 <div className = "productDetails">
                   <img src={product.img} id = "shoe" alt = "shoe"/>
                   <div className = "productSpecs">
@@ -89,9 +121,8 @@ const Cart = () => {
 
                 <div className = "productPrice">
                   <div className = "productAmountContainer">
-                    <Add/>
-                    <h3> {product.quantity} </h3>
-                    <Remove/>
+                    <h3>Quantity: {product.quantity} </h3>
+                    <Delete onClick = {handleDelete} style = {{cursor: "pointer"}}/>
                   </div>
                   <h3 id = "cartPrice">$ {product.price*product.quantity}</h3>
                 </div>
@@ -107,35 +138,41 @@ const Cart = () => {
 
               <div className = "summaryItem">
                 <h4 style = {{margin: 0}}>Subtotal:</h4>
-                <h4 style = {{margin: 0}}>{cart.total}</h4>
+                <h4 style = {{margin: 0}}>$ {cart.total}</h4>
               </div>
 
               <div className = "summaryItem">
                 <h4 style = {{margin: 0}}>Estimated shipping:</h4>
-                <h4 style = {{margin: 0}}>$F</h4>
+                <h4 style = {{margin: 0}}>$ 0</h4>
               </div>
 
               <div className = "summaryItem">
                 <h4 style = {{margin: 0}}>Discount:</h4>
-                <h4 style = {{margin: 0}}>-$5.90</h4>
+                <h4 style = {{margin: 0}}>$ 0</h4>
               </div>
 
               <div className = "summaryItem">
                 <h1 id = "total" >Total:</h1>
-                <h1>$100</h1>
+                <h1>$ {cart.total}</h1>
               </div>
-                <StripeCheckout
-                name="AnimeBros"
-                image="https://cdn3.iconfinder.com/data/icons/brands-applications/512/naruto-512.png"
-                billingAddress
-                shippingAddress
-                description={`Your total is $${cart.total}`}
-                amount={cart.total * 100}
-                token={onToken}
-                stripeKey={KEY}
-                >
-                  <button id = "checkoutButton" style = {{cursor: "pointer"}}>Checkout Now</button>
-                </StripeCheckout>
+
+              {cart.total !== 0 ?
+              <StripeCheckout
+              name="AnimeBros"
+              image="https://cdn3.iconfinder.com/data/icons/brands-applications/512/naruto-512.png"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+              >
+                <button id = "checkoutButton" style = {{cursor: "pointer"}}>Checkout Now</button>
+              </StripeCheckout>
+              :
+              <button id = "checkoutButton" style = {{cursor: "pointer"}} onClick = {handleError}>Checkout Now</button>
+              }
+              
           </div>
 
         </div>

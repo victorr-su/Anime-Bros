@@ -112,7 +112,7 @@ const Products = () => {
       </div>
       <div className = "productContainer">
         {filteredProducts.map(item =>(
-          <Link to = {"/product/" + item._id}>
+          <Link to = {"/product/" + item._id} key = {item._id}>
           <div className = "imageContainer">   
             <img src = {item.img} key = {item.id} alt = "none" id = "productImage"/>
           </div>

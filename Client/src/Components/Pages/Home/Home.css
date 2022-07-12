@@ -124,18 +124,22 @@
      font-weight: 600;
  }
 #categoryButton{
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 #categoryTitle{
-   font-size: 2.75rem;
+   font-size: 2.25rem;
    opacity: 2;
    mix-blend-mode: difference;
    text-align: center;
    padding: 5px;
 }
-
+@media only screen and (max-width: 1000px){
+    #categoryTitle{
+        font-size: 1.8rem;
+    }
+}
 @media only screen and (max-width: 1300px){
     #sliderImg{
         width: 100%;

@@ -43,8 +43,26 @@
     justify-content: end;
   }
   #Products, #About, #Contact, #register, #login{
-    padding: 30px;
+    margin: 30px;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+  #Products:after, #About:after, #Contact:after, #register:after, #login:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: antiquewhite;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  #Products:hover:after, #About:hover:after, #Contact:hover:after, #register:hover:after, #login:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
   #title{
     padding: 10px;
@@ -86,30 +104,44 @@
       width: 125px;
     }
     .nonactive-nav{
-      display:none;
-    }
-    .active-nav{
-      transition: ease-in-out;
       position:absolute;
-      left:0;
+      left:-100vw;
+      visibility: hidden;
       top: 128px;
-      display:flex;
       flex-direction: column;
       background-color: white;
-      align-items: center;
       z-index: 3;
       width: 100%;
       border-bottom: 1px solid #e9ecef;
+      translate: translateX(-100vw);
+      transition: .7s ease-in-out;
+    }
+    .active-nav{
+      position:absolute;
+      left:0;
+      top: 128px;
+      flex-direction: column;
+      background-color: white;
+      z-index: 3;
+      width: 100%;
+      border-bottom: 1px solid #e9ecef;
+      translate: translateX(100vw);
+      transition: .7s ease-in-out;
     }
     #Products,#About,#Contact, #register, #login{
       text-align: center;
     }
     .nonactive-login{
-      display: block;
-      border-bottom: 1px solid #e9ecef;
+      display:flex;
+      justify-content: center;
     }
     .active-login{
       display:none;
+    }
+    .three-links{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
     }
   }
   @media only screen and (max-width: 700px) {
@@ -121,6 +153,5 @@
     }
   }
   #Products:hover, #About:hover, #Contact:hover, #register:hover , #login:hover {
-    text-decoration: underline;
-    font-weight: 100;
+    font-weight:500;
 }

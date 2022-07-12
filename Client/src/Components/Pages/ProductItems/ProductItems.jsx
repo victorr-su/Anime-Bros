@@ -24,8 +24,7 @@ const FilterColor = styled.div`
   cursor: pointer;
 `
 
-const Bag = () => {
-    //redux dispatch to use reducers
+const ProductItems = () => {
     const dispatch = useDispatch();
 
     const [quantity, setQuantity] = useState(1);
@@ -132,4 +131,4 @@ const Bag = () => {
   )
 }
 
-export default Bag
+export default ProductItems;

@@ -59,10 +59,12 @@ const Home = () => {
       </div>
 
       <div className = "hiddenButton">
-        <button id = "button2">Shop Now</button>
+        <Link to = "/products" style = {{textDecoration:"none"}}>
+          <button id = "button2">Shop Now</button>
+        </Link>
       </div>
       
-      <h2 id = "categoryHeader">Most Popular</h2>
+      <h2 id = "categoryHeader">Most Popular Categories</h2>
 
       <div className = "Sections">
         {categories.map(item =>(
@@ -72,7 +74,7 @@ const Home = () => {
               </div>
               <div className = "titleCateogry">
               <h1 id = "categoryTitle">{item.title}</h1>
-                <Link to = {"/products" + item.cat}>
+                <Link to = {"/products/" + item.cat}>
                 <button id = "categoryButton">Shop now</button>
                 </Link>
               </div>
