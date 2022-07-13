@@ -13,7 +13,8 @@ https://youtu.be/9XKHOeK6khU
 This full stack ecommerce application has 15 pages built from React Router, and includes many custom components like a carousel slider, navbar, and footer. Redux was used for state management, specifcally for login and cart features, ex. saving items to cart updates the cart object in the store. The app offers CRUD operations and is responsive for mobile on a variety of screen sizes. The Client folder contains all the components for the front end and all the Redux files. The Api folder contains the schema's for different objects and routes for specfic types of requests to be handled.
 
 # Why?
-My friend and I wanted to start a business selling anime merchandise, and I saw this as an opportunity to learn how to build a CRUD application while doing something I love.
+My friend and I wanted to start a business selling anime merchandise, and I saw this as an opportunity to learn how to build a full stack app that caters towards my interests.
+
 # Technology
 Client: React, CSS, React Router, Styled Components, Redux (State management)
 
