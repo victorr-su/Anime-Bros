@@ -11,7 +11,7 @@ I'm currently working on deploying the project, so in the meantime check out the
 https://youtu.be/9XKHOeK6khU
 
 
-#Features
+# Features
 This full stack ecommerce application has 15 pages built from React Router, and includes many custom components like a carousel slider, navbar, and footer. Redux was used for state management, specifcally for login and cart features. The app offers CRUD operations and is responsive for mobile on a variety of screen sizes. The Client folder contains all the components for the front end and all the Redux files. The Api folder contains the schema's for different objects and routes for specfic types of requests to be handled.
 
 # Why?
