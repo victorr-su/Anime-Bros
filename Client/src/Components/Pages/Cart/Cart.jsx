@@ -121,7 +121,7 @@ const Cart = () => {
 
                 <div className = "productPrice">
                   <div className = "productAmountContainer">
-                    <h3>Quantity: {product.quantity} </h3>
+                    <h3> Quantity: {product.quantity} </h3>
                     <Delete onClick = {handleDelete} style = {{cursor: "pointer"}}/>
                   </div>
                   <h3 id = "cartPrice">$ {product.price*product.quantity}</h3>
