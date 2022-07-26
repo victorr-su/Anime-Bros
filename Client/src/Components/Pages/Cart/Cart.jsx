@@ -66,8 +66,10 @@ const Cart = () => {
     }
   }
 
-  const handleDelete = () =>{
-    dispatch(deleteProduct({...cart}));
+  const handleDelete = (e) =>{
+      const id = e.currentTarget.getAttribute('value');
+      const index = cart.products.findIndex((product)=> product._id === id)
+      dispatch(deleteProduct({...cart.products[index]}));
   }
 
   return (
@@ -122,7 +124,7 @@ const Cart = () => {
                 <div className = "productPrice">
                   <div className = "productAmountContainer">
                     <h3> Quantity: {product.quantity} </h3>
-                    <Delete onClick = {handleDelete} style = {{cursor: "pointer"}}/>
+                    <Delete style = {{cursor: "pointer"}} onClick = {handleDelete} value = {product._id}/>
                   </div>
                   <h3 id = "cartPrice">$ {product.price*product.quantity}</h3>
                 </div>

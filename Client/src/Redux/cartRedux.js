@@ -17,13 +17,10 @@ const cartSlice = createSlice({
         },
         deleteProduct: (state,action) =>{
             state.quantity-=1;
-            {state.products.map((product)=>(
-                state.total -= product.price * product.quantity,
-                state.products.shift()
-            ))}
-            if(state.quantity === 0){
-                state.total = 0;
-            }
+            state.products.splice(
+                state.products.findIndex((product)=> product._id === action.payload._id),1
+            )
+            state.total -= action.payload.price * action.payload.quantity
         }
     }
 })
