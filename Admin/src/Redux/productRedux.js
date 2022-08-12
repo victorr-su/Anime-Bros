@@ -23,8 +23,7 @@ export const productSlice = createSlice({
             state.error = true;
         },
 
-        //DElete
-
+        //Delete
         deleteProductStart:(state)=>{
             state.isfetching = true;
             state.error = false;
@@ -39,8 +38,49 @@ export const productSlice = createSlice({
             state.isfetching = false;
             state.error = true;
         },
+
+        // UPDATE
+        updateProductStart:(state)=>{
+            state.isfetching = true;
+            state.error = false;
+        },
+        updateProductSuccess: (state, action)=>{
+            state.isfetching = false;
+            state.products[state.products.findIndex((item) => item._id === action.payload.id)] = action.payload.product;
+        },
+        updateProductFail: (state)=>{
+            state.isfetching = false;
+            state.error = true;
+        },
+
+         // ADD
+         addProductStart:(state)=>{
+            state.isfetching = true;
+            state.error = false;
+        },
+        addProductSuccess: (state, action)=>{
+            state.isfetching = false;
+            state.products.push(action.payload)
+        },
+        addProductFail: (state)=>{
+            state.isfetching = false;
+            state.error = true;
+        },
     }
 });
 
-export const {getProductStart, getProductSuccess,getProductFail, deleteProductFail, deleteProductStart, deleteProductSuccess} = productSlice.actions;
+export const {
+getProductStart, 
+getProductSuccess,
+getProductFail, 
+deleteProductFail, 
+deleteProductStart, 
+deleteProductSuccess,
+updateProductStart, 
+updateProductSuccess,
+updateProductFail,
+addProductStart,
+addProductSuccess,
+addProductFail} 
+= productSlice.actions;
 export default productSlice.reducer
